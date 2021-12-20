@@ -36,18 +36,18 @@
     }
   };
 
-  // const hint = (d) => {
-  //   console.log(
-  //     'Mensaje (msg): ' + d.msg + '\n' +
-  //     'Dimensiones (dim): ' + d.dim + '\n' +
-  //     'Padding (pad): ' + d.pad + '\n' +
-  //     'mtx: ' + d.mtx + '\n' +
-  //     'ecl: ' + d.ecl + '\n' +
-  //     'ecb: ' + d.ecb + '\n' +
-  //     'Paleta (pal): ' + d.pal + '\n' +
-  //     'Verbose (vrb): ' + d.vrb + '\n'
-  //   );
-  // };
+  const hint = (d) => {
+    console.log(
+      'Mensaje (msg): ' + d.msg + '\n' +
+      'Dimensiones (dim): ' + d.dim + '\n' +
+      'Padding (pad): ' + d.pad + '\n' +
+      'mtx: ' + d.mtx + '\n' +
+      'ecl: ' + d.ecl + '\n' +
+      'ecb: ' + d.ecb + '\n' +
+      'Paleta (pal): ' + d.pal + '\n' +
+      'Verbose (vrb): ' + d.vrb + '\n'
+    );
+  };
 
   const download = (d) => {
     const replace = (d, r) => {
@@ -146,8 +146,9 @@
         return download(valores.box.innerHTML);
       };
 
-    // console.log('QRCode generation time: ' + (new Date() - time) + ' ms');
-    // hint(data);
+    console.log('QRCode generation time: ' + (new Date() - time) + ' ms');
+
+    hint(data);
   };
 
   valores.txt.value = [
