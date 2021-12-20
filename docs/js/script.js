@@ -5,7 +5,6 @@
   const valores = {
     box: $('#box'),
     txt: $('#msg'),
-    // res: $('#res'),
 
     set: $('#set'),
     op1: $('#op1'),
@@ -14,12 +13,9 @@
     in1: $('#in1'),
     in2: $('#in2'),
     in3: $('#in3'),
-    // in4: $('#in4'),
-    // in5: $('#in5'),
+    in4: $('#in4'),
+    in5: $('#in5'),
     in6: $('#in6'),
-    in7: $('#in7'),
-    in8: $('#in8'),
-    // in9: $('#in9'),
   };
 
   const current = (o) => {
@@ -41,7 +37,7 @@
       'Mensaje (msg): ' + d.msg + '\n' +
       'Dimensiones (dim): ' + d.dim + '\n' +
       'Padding (pad): ' + d.pad + '\n' +
-      'mtx: ' + d.mtx + '\n' +
+      'Patron (mtx): ' + d.mtx + '\n' +
       'ecl: ' + d.ecl + '\n' +
       'ecb: ' + d.ecb + '\n' +
       'Paleta (pal): ' + d.pal + '\n' +
@@ -107,17 +103,15 @@
   valores.in1.onchange =
     valores.in2.onchange =
     valores.in3.onchange =
-    // valores.in4.onchange =
-    // valores.in5.onchange =
+    valores.in4.onchange =
+    valores.in5.onchange =
     valores.in6.onchange =
-    valores.in8.onchange =
-    // valores.in9.onchange =
     () => {
       valores.box.update();
     };
 
-  valores.in7.onchange = () => {
-    valores.in8.checked = true;
+  valores.in5.onchange = () => {
+    valores.in6.checked = true;
     valores.box.update();
   };
 
@@ -137,7 +131,7 @@
       mtx: valores.in3.value,
       ecl: 'H',
       ecb: 1,
-      pal: [valores.in6.value, valores.in8.checked | 0 && valores.in7.value],
+      pal: [valores.in4.value, valores.in6.checked | 0 && valores.in5.value],
       vrb: 0
     };
 
