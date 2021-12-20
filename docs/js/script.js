@@ -123,15 +123,23 @@
 
   valores.box.update = () => {
     clear(valores.box);
-    const time = new Date();
+    const check = (element, first, last, input, defaultValue) => {
+      if (element.value >= first && element.value <= last) {
+        return element.value;
+      } else {
+        element.value = defaultValue;
+        window.alert(input + ' fuera de rango ' + first + ' - ' + last);
+        return defaultValue;
+      }
+    }
     const data = {
       msg: valores.txt.value,
-      dim: valores.in1.value | 0,
-      pad: valores.in2.value | 0,
-      mtx: valores.in3.value,
+      dim: check(valores.in1, 256, 61440, 'Dimesion', 256),
+      pad: check(valores.in2, 0, 10, 'Padding', 3),
+      mtx: check(valores.in3, -1, 7, 'Pattern', -1),
       ecl: 'H',
       ecb: 1,
-      pal: [valores.in4.value, valores.in6.checked | 0 && valores.in5.value],
+      pal: [valores.in4.value, valores.in6.checked && valores.in5.value],
       vrb: 0
     };
 
@@ -140,14 +148,8 @@
         return download(valores.box.innerHTML);
       };
 
-    console.log('QRCode generation time: ' + (new Date() - time) + ' ms');
-
     hint(data);
   };
-
-  valores.txt.value = [
-    ''
-  ][(Math.random() * 1) | 0];
 
   current(valores.txt);
   valores.box.update();
