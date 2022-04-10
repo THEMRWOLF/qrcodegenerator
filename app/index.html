@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="QR Generator JS" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Tomás Navarro Cabrera" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <title>QR Generator</title>
+
+    <script src="./js/qrcode.min.js"></script>
+    <script src="./js/script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- <div id="menu-bar">
+      <div class="left" role="menu">
+        <h5>QR Generator</h5>
+      </div>
+      <div class="right">
+        <button class="menubar-btn" id="minimize-btn">
+          <i class="fas fa-window-minimize"></i>
+        </button>
+        <button class="menubar-btn" id="max-unmax-btn">
+          <i class="far fa-square"></i>
+        </button>
+        <button class="menubar-btn" id="close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div> -->
+    <div id="txt">
+      <input id="msg" placeholder="Type here..." />
+    </div>
+    <div id="set">
+      <a id="op1" class="opt" href="#">Show settings</a>
+      <a id="op2" class="opt" href="#">Hide settings</a>
+
+      <div class="legend">
+        <h3>QR SETTINGS</h3>
+      </div>
+      <table>
+        <tr>
+          <th>
+            <label for="in1">Dimension</label>
+          </th>
+          <td>
+            <input
+              id="in1"
+              type="number"
+              value="256"
+              min="256"
+              max="61440"
+              step="64"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="in2">Padding</label>
+          </th>
+          <td>
+            <input id="in2" type="number" value="3" min="0" max="10" />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="in3">PATTERN</label>
+          </th>
+          <td>
+            <select id="in3">
+              <option value="-1" selected="selected">(AUTO)</option>
+              <option value="0">TYPE 0</option>
+              <option value="1">TYPE 1</option>
+              <option value="2">TYPE 2</option>
+              <option value="3">TYPE 3</option>
+              <option value="4">TYPE 4</option>
+              <option value="5">TYPE 5</option>
+              <option value="6">TYPE 6</option>
+              <option value="7">TYPE 7</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="in4">Faces</label>
+          </th>
+          <td>
+            <input id="in4" type="color" value="#000000" />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="in5">Background color</label>
+          </th>
+          <td>
+            <input id="in5" type="color" value="#f2f4f8" />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="in6">Background opaque</label>
+          </th>
+          <td>
+            <input id="in6" type="checkbox" checked />
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="box"></div>
+  </body>
+</html>

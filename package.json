@@ -1,0 +1,29 @@
+{
+  "name": "qrcodegenerator",
+  "productName": "QR Generator",
+  "version": "1.0.0",
+  "author": "Tomás Navarro Cabrera",
+  "description": "QR generator",
+  "main": "main.js",
+  "license": "MIT",
+  "keywords": [
+    "Electron",
+    "QR",
+    "generator"
+  ],
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^18.0.3",
+    "electron-builder": "^23.0.3"
+  },
+  "build": {
+    "appId": "github.themrwolf",
+    "mac": {
+      "target": "pkg",
+      "icon": "./app/assets/icons/android-chrome-512x512.png"
+    }
+  }
+}
